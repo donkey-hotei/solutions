@@ -1,0 +1,12 @@
+
+# ignore VIM swap files
+*.sw*
+
+# ignore text files (usually used for test)
+*.txt
+
+# ignore binaries
+a.out
+
+# ignore .gdbhistory
+.gdb_history

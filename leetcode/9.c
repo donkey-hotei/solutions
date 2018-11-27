@@ -9,6 +9,10 @@ int is_palindrome(int n) {
     int r = n;
     int m = 0;
 
+    if (n < 0) {
+        return false;
+    }
+
     while (r > 0) {
         m *= 10;
         m += r % 10;

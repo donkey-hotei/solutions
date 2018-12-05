@@ -1,0 +1,6 @@
+[package]
+name = "day-two"
+version = "0.1.0"
+authors = ["donkey_hotei <donkey-hotei@cryptolab.net>"]
+
+[dependencies]

@@ -10,7 +10,7 @@ type TreeNode struct {
     Right *TreeNode
 }
 
-func levelOrder(root *TreeNode) []float64 {
+func levelOrderAverage(root *TreeNode) []float64 {
     res := []float64{}
 
     if root == nil {
@@ -69,5 +69,5 @@ func main() {
             },
         },
     }
-    fmt.Printf("%v", levelOrder(&tree))
+    fmt.Printf("%v", levelOrderAverage(&tree))
 }

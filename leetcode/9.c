@@ -19,11 +19,7 @@ int is_palindrome(int n) {
         r /= 10;
     }
 
-    if (m == n) {
-        return true;
-    } else {
-        return false;
-    }
+    return m == n;
 }
 
 int main() {

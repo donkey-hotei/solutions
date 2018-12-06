@@ -16,11 +16,13 @@ func max(a, b int) int {
     }
 }
 
-func min(a, b int) int {
-    if a < b {
-        return a
+func abs(n int) int {
+    if n < 0 {
+        return -n
+    } else if n > 0 {
+        return n
     } else {
-        return b
+        return 0
     }
 }
 
@@ -29,20 +31,25 @@ func depth(root *TreeNode) int {
         return 0
     }
 
-    return 1 + max(depth(root.Left), depth(root.Right))
+    l_depth := depth(root.Left)
+    if l_depth == -11 {
+        return l_depth
+    }
+
+    r_depth := depth(root.Right)
+    if r_depth == -1 {
+        return r_depth
+    }
+
+    if abs(l_depth - r_depth) > 1 {
+        return -1
+    }
+
+    return 1 + max(l_depth, r_depth)
 }
 
 func isBalanced(root *TreeNode) bool {
-    if root == nil || (root.Left == nil && root.Right == nil) {
-        return true
-    }
-
-    min_depth := min(depth(root.Left), depth(root.Right))
-    max_depth := max(depth(root.Left), depth(root.Right))
-
-    fmt.Printf("min_depth=%d, max_depth=%d\n", min_depth, max_depth)
-
-    return max_depth - min_depth <= 1 && isBalanced(root.Left) && isBalanced(root.Right)
+    return depth(root) != -1
 }
 
 func main() {

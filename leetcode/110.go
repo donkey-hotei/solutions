@@ -32,7 +32,7 @@ func depth(root *TreeNode) int {
     }
 
     l_depth := depth(root.Left)
-    if l_depth == -11 {
+    if l_depth == -1 {
         return l_depth
     }
 

@@ -1,12 +1,30 @@
 package main
 
-func findDuplicate(nums []int) int {
-    dupe := nums[0]
+import "fmt"
 
-    for nums[dupe] != dupe {
-        nums[0], nums[dupe] = nums[dupe], nums[0]
-        dupe = nums[0]
+func findDuplicate(nums []int) int {
+    r, t := nums[0], nums[0]
+    for {
+        r = nums[nums[r]]
+        t = nums[t]
+
+        if r == t {
+            break
+        }
     }
 
-    return dupe
+    p := nums[0]
+    q := t
+
+    for p != q {
+        p = nums[p]
+        q = nums[q]
+    }
+
+    return p
+}
+
+func main() {
+    a := []int{2,5,9,6,9,3,8,9,7,1};
+    fmt.Printf("%d\n", findDuplicate(a))
 }

@@ -15,8 +15,6 @@ impl NumMatrix {
             }
         }
 
-        println!("{:?}", cache);
-
         NumMatrix { cache }
     }
 

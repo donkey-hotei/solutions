@@ -1,8 +1,10 @@
 go 37
-rs 9
+rs 11
 py 8
 c 7
 toml 4
 cpp 3
+sh 1
 README 1
+lock 1
 gitignore 1

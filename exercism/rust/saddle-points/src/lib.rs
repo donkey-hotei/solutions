@@ -30,9 +30,7 @@ fn is_saddle_point(m: &[Vec<u64>], x: usize, y: usize) -> bool {
 }
 
 pub fn find_saddle_points(matrix: &[Vec<u64>]) -> Vec<(usize, usize)> {
-    let matrix_iterator = MatrixIterator::new(matrix.into());
-
-    matrix_iterator
+    MatrixIterator::new(matrix.into())
         .enumerate()
         .fold(Vec::new(), |mut points, (x, y)| {
             match is_saddle_point(matrix, x, y) {

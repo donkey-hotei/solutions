@@ -7,7 +7,7 @@ bool is_uppercase(char c) {
     return 'A' <= c && c <= 'Z';
 }
 
-char is_lowercase(char c) {
+bool is_lowercase(char c) {
     return 'a' <= c && c <= 'z';
 }
 

@@ -1,23 +1,13 @@
 #include "isogram.h"
+#include<ctype.h>
 #include<string.h>
 #include<stdlib.h>
 
-
-bool is_uppercase(char c) {
-    return 'A' <= c && c <= 'Z';
-}
-
-bool is_lowercase(char c) {
-    return 'a' <= c && c <= 'z';
-}
-
-char lower(char c) {
-    if (is_uppercase(c))
-        return c - 'A';
-    else if (is_lowercase(c))
-        return c - 'a';
-    else
-        return c;
+char tobit(char c) {
+   if (isupper(c))
+       return c - 'A';
+   else
+       return c - 'a';
 }
 
 bool is_isogram(const char phrase[]) {
@@ -27,10 +17,11 @@ bool is_isogram(const char phrase[]) {
     int len = strlen(phrase);
 
     for (int i = 0; i < len; i++) {
-        char c = lower(phrase[i]);
+        char c = phrase[i];
 
-        if (phrase[i] == c)
-            continue;
+        if (!isalpha(c)) continue;
+
+        c = tobit(c);
         if ((bit & (1 << c)) > 0)
             return false;
 

@@ -10,3 +10,10 @@ a.out
 
 # ignore .gdbhistory
 .gdb_history
+
+debug/
+target/
+Cargo.lock
+
+**/.rs.bk
+
